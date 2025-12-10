@@ -1,6 +1,6 @@
+use std::env;
 use std::error::Error;
 use std::fs;
-use std::env;
 pub struct Config {
     pub query: String,
     pub filename: String,
@@ -10,7 +10,7 @@ pub struct Config {
 impl Config {
     pub fn new(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
-            return Err("Not enough arguments. Usage: <program> <query> <filename>");
+            return Err("Not enough arguments. Usage: cargo run <query> <filename>");
         }
 
         // Access query from command-line arguments
@@ -24,7 +24,7 @@ impl Config {
         Ok(Config {
             query: query.to_string(),
             filename: filename.to_string(),
-            case_sensitive
+            case_sensitive,
         })
     }
 }

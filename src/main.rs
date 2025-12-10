@@ -1,7 +1,7 @@
-use std::env;
-use std::process;
 use cli_tool::Config;
 use cli_tool::run;
+use std::env;
+use std::process;
 
 fn main() {
     // Collect command-line arguments into a vector
@@ -21,4 +21,3 @@ fn main() {
         process::exit(1);
     }
 }
-
